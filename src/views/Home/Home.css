@@ -1,4 +1,18 @@
-
 .container {
   background-color: white;
+}
+
+.home-container {
+  padding: 0 48px;
+  margin-top: 48px;
+
+}
+
+.home-search-label {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 42px;
+  letter-spacing: 0em;
+  text-align: left;
+  
 }
