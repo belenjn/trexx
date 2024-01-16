@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0 48px;
-  width: 100%;
+  width: 1, 440px;
   height: 72px;
   position: relative;
   overflow: hidden;
@@ -17,7 +17,7 @@
   flex-direction: row;
   width: 100%;
   height: 72px;
-  gap: 48px; 
+  gap: 48px;
 }
 
 .logo {
@@ -26,4 +26,64 @@
   width: 148px;
   height: 28.3px;
   z-index: 1;
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.menu-item {
+  color: #000;
+  cursor: pointer;
+}
+
+.menu-icon {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-container {
+    padding: 24px;
+    flex-direction: row;
+    justify-content: space-around;
+    min-height: 72px;
+    max-height: 150px;
+    overflow: hidden;
+  }
+
+  .logo {
+    width: 60px;
+    height: auto;
+  }
+
+  .menu-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .menu-icon-hamburger {
+    width: 20px;
+    height: 20px;
+  }
+
+  .dropdown-menu {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    margin-left: 20px;
+    justify-content: space-between;
+    width: 90%;
+    z-index: 100;
+  }
+
+  .dropdown-menu label {
+    font-size: 12px;
+  }
 }
