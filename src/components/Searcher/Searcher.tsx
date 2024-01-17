@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Searcher.css";
 import searchIcon from "../../assets/search.png";
 import { strings } from "../../utils/strings";
@@ -28,7 +28,6 @@ export const Searcher = () => {
       handleSearch();
     }
   };
-  console.log(state.data?.data, "estado");
 
   return (
     <div className={`searcher-container ${expanded ? "expanded" : ""}`}>
