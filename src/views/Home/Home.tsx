@@ -5,9 +5,9 @@ import { useData } from "../../context/DataContext";
 import { Track } from "../../types/Track";
 import { GridCard } from "../../components/GridCard/GridCard";
 import { NoResults } from "../NoResults/NoResults";
+import { strings } from "../../utils/strings";
 
 //TODO: Al hacer click en cualquiera de las canciones, abriremos una capa con el reproductor y reproduciremos la muestra de 30 segundos que nos devuelva la petición con los controles que se muestren en el diseño. Al pinchar en otra canción, la información del reproductor deberá cambiar.
-//TODO: repasar strings en archivo por todos los cmponentes
 //TODO: tests
 
 export const Home = () => {
@@ -26,7 +26,8 @@ export const Home = () => {
       <Navbar />
       <div className="home-container">
         <label className="home-search-label">
-          Search results for: <b>{state.data?.data[1].artist.name}</b>
+          {`${strings.home.search}`}
+          <b>{state.data?.data[1].artist.name}</b>
         </label>
         <div className={tracks ? "grid-container" : ""}>
           {tracks ? (
