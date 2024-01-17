@@ -1,0 +1,34 @@
+.music-player-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  height: 115px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+}
+
+.album-cover {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+}
