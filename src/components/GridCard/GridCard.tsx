@@ -16,6 +16,7 @@ export const GridCard = ({ track, onClick }: GridCardProps) => {
       className={`grid-item ${isHovered ? "grid-item-hovered" : ""}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={() => onClick(track)}
       style={{
         backgroundImage: `url(${track.album.cover_xl})`,
         backgroundRepeat: "no-repeat",
@@ -30,8 +31,6 @@ export const GridCard = ({ track, onClick }: GridCardProps) => {
         <h2 className="title-style">{track.title}</h2>
         <h4 className="font-style">{track.artist.name}</h4>
         <h4 className="font-style">{track.album.title}</h4>
-
-        {/* <button onClick={() => onClick(track)}>Play 30s Sample</button> */}
       </div>
     </div>
   );
