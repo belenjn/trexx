@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Track } from "../../types/Track";
 import "./MusicPlayer.css";
 import { convertSecondsToMinutes } from "../../utils/convertSecondsToMinutes";
+import pauseButton from "../../assets/pause.png";
+import volumeButton from "../../assets/volume.png";
 
 interface Props {
   track: Track;
@@ -12,6 +14,8 @@ const MusicPlayer = ({ track }: Props) => {
   const [audio, setAudio] = useState(new Audio(track.preview));
   const [currentTime, setCurrentTime] = useState(0);
   const [progress, setProgress] = useState(0);
+  const [volume, setVolume] = useState(70);
+  const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
     const handleCanPlay = () => {
@@ -43,8 +47,33 @@ const MusicPlayer = ({ track }: Props) => {
   }, [track.preview, audio, setIsPlaying]);
 
   useEffect(() => {
+    const handleVolumeChange = () => {
+      setVolume(audio.volume * 100);
+    };
+
+    audio.addEventListener("volumechange", handleVolumeChange);
+
+    return () => {
+      audio.removeEventListener("volumechange", handleVolumeChange);
+    };
+  }, [audio, setVolume]);
+
+  useEffect(() => {
     audio.src = track.preview;
   }, [track.preview, audio]);
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.pageYOffset;
+
+      setIsSticky(offset > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const togglePlay = () => {
     if (isPlaying) {
@@ -55,31 +84,75 @@ const MusicPlayer = ({ track }: Props) => {
     setIsPlaying(!isPlaying);
   };
 
+  const handleVolumeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newVolume = parseFloat(e.target.value) / 100;
+    setVolume(parseFloat(e.target.value));
+    audio.volume = newVolume;
+  };
+
+  const containerClass = `music-player-container ${isSticky ? "sticky" : ""}`;
+
   return (
-    <div className="music-player-container" onClick={togglePlay}>
+    <div className={containerClass}>
       <div className="left">
         <img
-          src={track.album.cover_small}
+          src={track.album.cover_medium}
           alt="Album Cover"
           className="album-cover"
         />
-        <div>
-          <p>{track.title}</p>
-          <p>{track.artist.name}</p>
+        <div className="text-container">
+          <p className="album-title">{track.title}</p>
+          <p className="album-subtitle">{track.artist.name}</p>
         </div>
       </div>
 
       <div className="center">
-        <button>{isPlaying ? "▌▌" : "▶"}</button>
-        <div>
-          <label>{convertSecondsToMinutes(Math.floor(currentTime))}</label>
-          <input type="range" value={progress} max={100} readOnly />
-          <label>{convertSecondsToMinutes(track.duration)}</label>
+        <button className="play-pause-button" onClick={togglePlay}>
+          {isPlaying ? (
+            <img
+              alt="pause button"
+              src={pauseButton}
+              width={12}
+              height={15}
+              className="pause-icon"
+            />
+          ) : (
+            <h2 className="play-icon">▶</h2>
+          )}
+        </button>
+        <div className="bar-container">
+          <label className="duration-text">
+            {convertSecondsToMinutes(Math.floor(currentTime))}
+          </label>
+          <input
+            type="range"
+            defaultValue={0}
+            value={progress}
+            max={100}
+            readOnly
+            className="progress-bar"
+            style={{
+              background: `linear-gradient(to right, #EF5466 ${progress}%, #0000000D ${progress}%)`,
+            }}
+          />
+          <label className="duration-text">
+            {convertSecondsToMinutes(track.duration)}
+          </label>
         </div>
       </div>
 
       <div className="right">
-        <input type="range" defaultValue={70} max="100" />
+        <img alt="volume button" src={volumeButton} width={24} height={24} />
+        <input
+          type="range"
+          max="100"
+          onChange={handleVolumeChange}
+          value={volume}
+          className="progress-bar-volume"
+          style={{
+            background: `linear-gradient(to right, #EF5466 ${volume}%, #0000000D ${volume}%)`,
+          }}
+        />
       </div>
     </div>
   );
