@@ -37,6 +37,7 @@
 .menu-item {
   color: #000;
   cursor: pointer;
+  font-size: 18px;
 }
 
 .menu-icon {
