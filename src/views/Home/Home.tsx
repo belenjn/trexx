@@ -8,7 +8,8 @@ import { NoResults } from "../NoResults/NoResults";
 import { strings } from "../../utils/strings";
 import MusicPlayer from "../../components/MusicPlayer/MusicPlayer";
 
-//TODO: Al hacer click en cualquiera de las canciones, abriremos una capa con el reproductor y reproduciremos la muestra de 30 segundos que nos devuelva la petición con los controles que se muestren en el diseño. Al pinchar en otra canción, la información del reproductor deberá cambiar.
+//TODO: revisar estilos responsive en general, pero sobretodo del reproductor
+//TODO: revisar state al refrescar
 //TODO: tests
 
 export const Home = () => {
