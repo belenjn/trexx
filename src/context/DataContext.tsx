@@ -1,4 +1,10 @@
-import React, { createContext, useReducer, useContext, ReactNode } from "react";
+import React, {
+  createContext,
+  useReducer,
+  useContext,
+  ReactNode,
+  useEffect,
+} from "react";
 import { DeezerApiResponse } from "../types/DeezerApiResponse";
 
 interface DataState {
@@ -27,7 +33,15 @@ const dataReducer = (state: DataState, action: DataAction): DataState => {
 };
 
 const DataProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [state, dispatch] = useReducer(dataReducer, { data: null });
+  const storedData = localStorage.getItem("data");
+  const initialDataState: DataState = {
+    data: storedData ? JSON.parse(storedData) : null,
+  };
+  const [state, dispatch] = useReducer(dataReducer, initialDataState);
+
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(state.data));
+  }, [state.data]);
 
   return (
     <DataContext.Provider value={{ state, dispatch }}>
@@ -35,7 +49,6 @@ const DataProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     </DataContext.Provider>
   );
 };
-
 const useData = (): DataContextType => {
   const context = useContext(DataContext);
   if (!context) {
