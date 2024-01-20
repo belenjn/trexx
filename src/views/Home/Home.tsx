@@ -8,27 +8,19 @@ import { NoResults } from "../NoResults/NoResults";
 import { strings } from "../../utils/strings";
 import MusicPlayer from "../../components/MusicPlayer/MusicPlayer";
 
-//TODO: arreglar responisve del navbar
-//TODO: revisar state al refrescar
 //TODO: tests
 
 export const Home = () => {
   const { state } = useData();
   const tracks = state.data?.data.filter((artist) => artist.type === "track");
 
-  const [selectedTrack, setSelectedTrack] = useState<Track | null>(null);
   const [isMusicPlayerOpen, setIsMusicPlayerOpen] = useState(false);
   const [track, setTrack] = useState<Track | null>(null);
 
   const handleTrackClick = (track: Track) => {
-    setSelectedTrack(track);
     setIsMusicPlayerOpen(true);
     setTrack(track);
   };
-
-  useEffect(() => {
-    setIsMusicPlayerOpen(false);
-  }, [state.data]);
 
   return (
     <div className="container">
