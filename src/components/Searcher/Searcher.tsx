@@ -6,9 +6,8 @@ import { fetchData } from "../../utils/fetchData";
 import { useData } from "../../context/DataContext";
 
 export const Searcher = () => {
-  const [expanded, setExpanded] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
-  const { state, dispatch } = useData();
+  const { dispatch } = useData();
 
   const handleSearch = async () => {
     try {
@@ -19,10 +18,6 @@ export const Searcher = () => {
     }
   };
 
-  const toggleInput = () => {
-    setExpanded(!expanded);
-  };
-
   const handleKeyDown = (e: { key: string }) => {
     if (e.key === "Enter") {
       handleSearch();
@@ -30,17 +25,11 @@ export const Searcher = () => {
   };
 
   return (
-    <div className={`searcher-container ${expanded ? "expanded" : ""}`}>
-      <img
-        className={`search-icon ${expanded ? "hidden" : ""}`}
-        src={searchIcon}
-        alt="Search Icon"
-        onClick={toggleInput}
-      />
+    <div className="searcher-container">
+      <img className="search-icon" src={searchIcon} alt="Search Icon" />
       <input
         type="text"
         placeholder={`${strings.searcher.placeholder}`}
-        className={expanded ? "expanded" : ""}
         onChange={(e) => setSearchTerm(e.target.value)}
         onKeyDown={handleKeyDown}
       />
