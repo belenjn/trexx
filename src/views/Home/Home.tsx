@@ -8,7 +8,7 @@ import { NoResults } from "../NoResults/NoResults";
 import { strings } from "../../utils/strings";
 import MusicPlayer from "../../components/MusicPlayer/MusicPlayer";
 
-//TODO: revisar estilos responsive en general, pero sobretodo del reproductor
+//TODO: arreglar responisve del navbar
 //TODO: revisar state al refrescar
 //TODO: tests
 

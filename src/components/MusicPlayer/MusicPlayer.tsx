@@ -15,7 +15,6 @@ const MusicPlayer = ({ track }: Props) => {
   const [currentTime, setCurrentTime] = useState(0);
   const [progress, setProgress] = useState(0);
   const [volume, setVolume] = useState(70);
-  const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
     const handleCanPlay = () => {
@@ -61,19 +60,6 @@ const MusicPlayer = ({ track }: Props) => {
   useEffect(() => {
     audio.src = track.preview;
   }, [track.preview, audio]);
-  useEffect(() => {
-    const handleScroll = () => {
-      const offset = window.pageYOffset;
-
-      setIsSticky(offset > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   const togglePlay = () => {
     if (isPlaying) {
@@ -90,10 +76,8 @@ const MusicPlayer = ({ track }: Props) => {
     audio.volume = newVolume;
   };
 
-  const containerClass = `music-player-container ${isSticky ? "sticky" : ""}`;
-
   return (
-    <div className={containerClass}>
+    <div className="music-player-container">
       <div className="left">
         <img
           src={track.album.cover_medium}
