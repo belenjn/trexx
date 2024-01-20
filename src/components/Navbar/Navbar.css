@@ -46,6 +46,27 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 810px) {
+
+
+  .logo {
+    background-color: white;
+    box-shadow: initial;
+    width: 100px;
+    height: auto;
+    z-index: 1;
+  }
+  .menu-item {
+    font-size: 16px;
+  }
+
+  .menu-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+
 @media only screen and (max-width: 600px) {
   .nav-container {
     padding: 24px;

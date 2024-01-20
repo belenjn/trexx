@@ -44,6 +44,18 @@ export const Navbar = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
   const [menuVisible, setMenuVisible] = useState(false);
 
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 600);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const toggleMenu = () => {
     setMenuVisible(!menuVisible);
   };
@@ -61,7 +73,7 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <div className="nav-container">
+    <div className={`nav-container ${isMobile ? "mobile" : ""}`}>
       <div className="searcher-logo-container">
         <img alt="deezer-logo" src={logo} className="logo" />
         <Searcher />
