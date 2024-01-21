@@ -6,7 +6,7 @@ This project is a web application built in React that replicates the provided de
 
 Clone the repository:
 
-### `git clone https://github.com/tu-usuario/react-deezer-music-app.git`
+### `git clone https://github.com/belenjn/trexx.git`
 
 Install dependencies:
 
