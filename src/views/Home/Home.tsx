@@ -27,7 +27,9 @@ export const Home = () => {
       <div className="home-container">
         <label className="home-search-label">
           {`${strings.home.search}`}
-          <b>{state.data?.data[1].artist.name}</b>
+          <b className="home-search-label-text">
+            {state.data?.data[1].artist.name}
+          </b>
         </label>
         <div className={tracks ? "grid-container" : ""}>
           {tracks ? (
