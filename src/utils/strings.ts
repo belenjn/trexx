@@ -13,5 +13,8 @@ export const strings = {
     },
     noResults: {
         noResults: 'No results found'
+    },
+    error: {
+        context: 'useData debe ser utilizado dentro de DataProvider'
     }
 }
