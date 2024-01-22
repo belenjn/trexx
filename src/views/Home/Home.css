@@ -1,5 +1,6 @@
 .container {
   background-color: white;
+  margin-bottom: 48px;
 }
 
 .home-container {
@@ -10,6 +11,14 @@
 .home-search-label {
   font-size: 32px;
   font-weight: 400;
+  line-height: 42px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.home-search-label-text {
+  font-size: 32px;
+  font-weight: 500;
   line-height: 42px;
   letter-spacing: 0em;
   text-align: left;
@@ -33,10 +42,9 @@
     text-align: center;
     margin-bottom: 20px;
   }
-  
 
   .grid-container {
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
     justify-content: center;
     margin: 0 auto;
   }
@@ -54,9 +62,9 @@
     text-align: center;
     margin-bottom: 20px;
   }
-  
+
   .grid-container {
-    grid-template-columns: 1fr; 
+    grid-template-columns: 1fr;
     justify-content: center;
     margin: 0 auto;
   }

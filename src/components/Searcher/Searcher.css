@@ -28,7 +28,7 @@ input {
   width: 100%;
 }
 
-@media (max-width: 810px) {
+@media (max-width: 850px) {
   .searcher-container {
     width: auto;
     height: auto;
