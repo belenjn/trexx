@@ -7,13 +7,14 @@
 }
 
 .noResults-image {
-    height: auto;
-    width: 350px;
+  align-self: center;
+  height: auto;
+  width: 350px;
 }
 
 @media (max-width: 768px) {
   .noResults-container {
-    margin-top: 30px; 
+    margin-top: 30px;
   }
 }
 
@@ -23,6 +24,6 @@
   }
 
   .noResults-image {
-    width: 100%; 
+    width: 100%;
   }
 }
