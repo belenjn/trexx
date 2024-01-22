@@ -28,11 +28,18 @@ export const Home = () => {
         <label className="home-search-label">
           {`${strings.home.search}`}
           <b className="home-search-label-text">
-            {state.data?.data[1].artist.name}
+            {state.data && state.data.data[1] !== undefined
+              ? state.data.data[1].artist.name
+              : ""}
           </b>
         </label>
-        <div className={tracks ? "grid-container" : ""}>
-          {tracks ? (
+        <div></div>
+        <div
+          className={
+            tracks && tracks.length ? "grid-container" : "no-tracks-container"
+          }
+        >
+          {tracks && tracks.length ? (
             tracks.map((track, index) => (
               <GridCard key={index} track={track} onClick={handleTrackClick} />
             ))

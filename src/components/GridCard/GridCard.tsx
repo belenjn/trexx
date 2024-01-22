@@ -3,6 +3,7 @@ import { Track } from "../../types/Track";
 import playButton from "../../assets/play_button.png";
 
 import "./GridCard.css";
+import { NoResults } from "../../views/NoResults/NoResults";
 
 interface GridCardProps {
   track: Track;
@@ -11,6 +12,10 @@ interface GridCardProps {
 
 export const GridCard = ({ track, onClick }: GridCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
+
+  if (!track.artist) {
+    return <NoResults />;
+  }
 
   return (
     <div
