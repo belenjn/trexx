@@ -6,6 +6,7 @@ import React, {
   useEffect,
 } from "react";
 import { DeezerApiResponse } from "../types/DeezerApiResponse";
+import { strings } from "../utils/strings";
 
 interface DataState {
   data: DeezerApiResponse | null;
@@ -52,7 +53,7 @@ const DataProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
 const useData = (): DataContextType => {
   const context = useContext(DataContext);
   if (!context) {
-    throw new Error("useData debe ser utilizado dentro de DataProvider");
+    throw new Error(strings.error.context);
   }
   return context;
 };
