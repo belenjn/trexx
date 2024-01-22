@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/trexx/static/css/main.a9ee40bc.css",
+    "main.js": "/trexx/static/js/main.9cfed39a.js",
+    "static/media/no_results.jpg": "/trexx/static/media/no_results.d7d252633249b13476cc.jpg",
+    "index.html": "/trexx/index.html",
+    "main.a9ee40bc.css.map": "/trexx/static/css/main.a9ee40bc.css.map",
+    "main.9cfed39a.js.map": "/trexx/static/js/main.9cfed39a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a9ee40bc.css",
+    "static/js/main.9cfed39a.js"
+  ]
+}
