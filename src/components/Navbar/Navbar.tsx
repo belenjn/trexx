@@ -2,9 +2,10 @@ import React, { useState, useEffect } from "react";
 import logo from "../../assets/logo.png";
 import userIcon from "../../assets/user_icon.png";
 import menuIcon from "../../assets/menu.png";
-import "./Navbar.css";
 import { Searcher } from "../Searcher/Searcher";
 import { strings } from "../../utils/strings";
+
+import "./Navbar.css";
 
 interface Props {
   menuVisible: boolean;

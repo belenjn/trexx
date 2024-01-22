@@ -1,7 +1,8 @@
 import React from "react";
 import noResultsImage from "../../assets/no_results.jpg";
-import "./NoResults.css";
 import { strings } from "../../utils/strings";
+
+import "./NoResults.css";
 
 export const NoResults = () => {
   return (

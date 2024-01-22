@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import "./GridCard.css";
 import { Track } from "../../types/Track";
 import playButton from "../../assets/play_button.png";
+
+import "./GridCard.css";
 
 interface GridCardProps {
   track: Track;

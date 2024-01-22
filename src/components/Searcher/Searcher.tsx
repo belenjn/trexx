@@ -1,9 +1,10 @@
 import { useState } from "react";
-import "./Searcher.css";
 import searchIcon from "../../assets/search.png";
 import { strings } from "../../utils/strings";
 import { fetchData } from "../../utils/fetchData";
 import { useData } from "../../context/DataContext";
+
+import "./Searcher.css";
 
 export const Searcher = () => {
   const [searchTerm, setSearchTerm] = useState("");

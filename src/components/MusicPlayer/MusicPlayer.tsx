@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Track } from "../../types/Track";
-import "./MusicPlayer.css";
 import { convertSecondsToMinutes } from "../../utils/convertSecondsToMinutes";
 import pauseButton from "../../assets/pause.png";
 import volumeButton from "../../assets/volume.png";
+
+import "./MusicPlayer.css";
 
 interface Props {
   track: Track;

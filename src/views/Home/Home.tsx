@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import "./Home.css";
+import { useState } from "react";
 import { Navbar } from "../../components/Navbar/Navbar";
 import { useData } from "../../context/DataContext";
 import { Track } from "../../types/Track";
@@ -8,7 +7,7 @@ import { NoResults } from "../NoResults/NoResults";
 import { strings } from "../../utils/strings";
 import MusicPlayer from "../../components/MusicPlayer/MusicPlayer";
 
-//TODO: tests
+import "./Home.css";
 
 export const Home = () => {
   const { state } = useData();
