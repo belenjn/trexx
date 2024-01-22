@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/trexx/static/css/main.a9ee40bc.css",
-    "main.js": "/trexx/static/js/main.9cfed39a.js",
+    "main.css": "/trexx/static/css/main.50abebb3.css",
+    "main.js": "/trexx/static/js/main.308122ce.js",
     "static/media/no_results.jpg": "/trexx/static/media/no_results.d7d252633249b13476cc.jpg",
     "index.html": "/trexx/index.html",
-    "main.a9ee40bc.css.map": "/trexx/static/css/main.a9ee40bc.css.map",
-    "main.9cfed39a.js.map": "/trexx/static/js/main.9cfed39a.js.map"
+    "main.50abebb3.css.map": "/trexx/static/css/main.50abebb3.css.map",
+    "main.308122ce.js.map": "/trexx/static/js/main.308122ce.js.map"
   },
   "entrypoints": [
-    "static/css/main.a9ee40bc.css",
-    "static/js/main.9cfed39a.js"
+    "static/css/main.50abebb3.css",
+    "static/js/main.308122ce.js"
   ]
 }
